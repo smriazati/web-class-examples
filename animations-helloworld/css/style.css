@@ -1,0 +1,244 @@
+/* the basics */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.container {
+    flex: 1 0 auto;
+}
+
+header,
+footer {
+    flex-shrink: 0;
+} 
+
+img {
+    max-width: 100%;
+}
+
+header {
+    margin: 1rem 0;
+}
+
+header * {
+    margin: 1rem 0;
+}
+
+footer {
+    background: #000000;
+    width: 100%;
+    height: 2rem;
+    bottom: 0;
+}
+
+a,
+a:visited {
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+p, ul, ol {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+.button,
+.button:visited {
+    display: inline-block;
+    background: #000000;
+    margin: 4rem 0;
+    padding: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+section {
+    margin: 4rem 0;
+    background: #eaeaea;
+    padding: 20vh 0;
+}
+
+section div {
+    margin: 4rem 0;
+}
+
+.instructions {
+    width: 60ch;
+    margin: 0 auto;
+    background: #ffffff;
+    text-align: left;
+    padding: 2rem;
+}
+
+.instructions * {
+    margin: 1rem 0;
+}
+
+.instructions ul,
+.instructions ol {
+    padding-left: 20px;
+}
+.box {
+    background: #ffffff;
+    display: block;
+    margin: 4rem auto;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* WRITE YOUR CODE HERE */
+
+
+
+/* Animation 1 - TRANSITION */
+
+#animation-1 a {
+    /* add the transition property here */
+}
+
+#animation-1 a:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+
+/* Animation 2 - TRANSFORM */
+
+#animation-2 .box {
+    margin: 4rem auto;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000FF;
+    transition: .3s ease all;
+}
+
+#animation-2 .box:hover {
+    /* Add a transform rotate property here */
+}
+
+
+/* Animation 3 - INDIVIDUAL TRANSITIONS */
+
+#animation-3 .box {
+    margin: 4rem auto;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000FF;
+    /* Add the transitions here, using one single transition property with multiple values, separated by commas */
+}
+
+#animation-3 .box:hover {
+    width: 200px;
+    height: 200px;
+    background-color: #FFCCCC;
+    transform: rotate(180deg);
+}
+
+
+/* examples 2-3 above are from https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions */
+
+   
+
+/* ANIMATION 4 - ANIMATION WITH KEYFRAMES */
+
+
+/* Define your animation with the @keyframes syntax */
+
+@keyframes animation4 {
+    from {
+        background-color: #0000FF; /* change me */
+    }
+    
+    to {
+        background-color: #FFCCCC; /* change me */
+    }
+}
+
+#animation-4 .box {
+    width: 300px;
+    height: 300px;
+    
+    /* Replace with shorthand */
+    animation-name: animation4;
+    animation-duration: 4s; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+/* ANIMATION 5 - SPECIFIC KEYFRAMES */
+
+@keyframes fontbulger {
+  0% {
+      font-size: 20px;
+      line-height: 30px;
+  }
+  30% {
+      font-size: 45px;
+      line-height: 60px;
+  }
+  100% {
+      font-size: 32px;
+      line-height: 42px;
+  }
+}
+
+#animation-5 .box {
+    width: 60ch;
+    height: 400px
+}
+#animation-5 .box p {
+    /* animation: fontbulger 2s infinite; */
+}
+
+/* example #5 from https://css-tricks.com/snippets/css/keyframe-animation-syntax/ */
+
+
+/* ANIMATION 6 - PLAYGROUND */
+
+#animation-6 .box {
+    
+}
