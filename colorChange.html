@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge: Color Change</title>
+
+    <!-- WRITTEN BY SINAN GOKNUR 2019 -->
+    
+    <style>
+        body {
+            max-width: 50%;
+            margin: 0 auto;
+            text-align: center;
+
+        }
+
+        #clrPanel {
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            width: 350px;
+            justify-content: space-between;
+
+        }
+
+        .clrPick {
+            width: 75px;
+            height: 75px;
+        }
+
+        #blue {
+            background: blue;
+        }
+
+        #green {
+            background: green;
+        }
+
+        #red {
+            background: red;
+        }
+
+        #wheat {
+            background: wheat;
+        }
+        
+        #announceBlock{
+            width: 350px;
+            height: 150px;
+            background: black;
+            margin-top: 20px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            padding-top: 70px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Select Body Color</h1>
+    <div id="clrPanel">
+        <div class="clrPick" id="blue"> </div>
+        <div class="clrPick" id="green"></div>
+        <div class="clrPick" id="red"></div>
+        <div class="clrPick" id="wheat"></div>
+        <div id="announceBlock"></div>
+    </div>
+    
+
+<script>
+    //grab color squares 
+    var blueSqr = document.querySelector("#blue");
+    var greenSqr = document.querySelector("#green");
+    var redSqr = document.querySelector("#red");
+    var wheatSqr = document.querySelector("#wheat");
+    
+    //grab announcement board
+    var bodyColorBoard = document.querySelector("#announceBlock");
+    
+    //add event listeners for mouse click to each square
+    blueSqr.addEventListener("click", colorBody.bind(this, "blue"));
+    greenSqr.addEventListener("click", colorBody.bind(this,"green"));
+    redSqr.addEventListener("click", colorBody.bind(this,"red"));
+    wheatSqr.addEventListener("click", colorBody.bind(this,"wheat"));
+
+    //colorBody function changes the body color to the passed argument
+    //it updates the inner text of the announcement board
+    //it also provides selection feedback with a white bottom border
+    function colorBody(clr, e) {
+        //set the body color to the passed argument 
+        document.querySelector("body").style.backgroundColor = clr;
+        
+        //update the announcement board
+        bodyColorBoard.innerText = "The body color is : " + clr;
+        
+        //clear all borderBottoms before setting the selected square's to white 
+        var myClrArray = document.querySelectorAll(".clrPick");
+        for (i= 0; i < myClrArray.length; i++){
+            myClrArray[i].style.borderBottom = "";
+        }
+        
+        //set the selected square's bottom border to white
+        e.target.style.borderBottom = "4px solid white"; 
+    }
+    
+    //add an event listener for mouseclick on the announcement board to reset the page
+    bodyColorBoard.addEventListener("click", resetPage);
+    
+    function resetPage(e){
+        document.querySelector("body").style.backgroundColor = "white";
+        e.target.innerText = "";
+    }
+
+    
+</script>    
+</body>
+
+</html>
