@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Full height hero</title>
+        
+        <style>
+            
+            /* 
+            inspired by Jen Simmons Resilient CSS 
+            OVERRIDES https://www.youtube.com/watch?v=0X6zrW2QW8Q 
+            FQs https://www.youtube.com/watch?v=T8uxmUQZsck 
+            */
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                transition: .3s ease all;
+            }
+            
+            body {
+                font-size: 20px;
+                font-family: sans-serif;
+                letter-spacing: 0.03em;
+            }
+            
+            html {
+                scroll-behavior: smooth;
+            }
+            img {
+                max-width: 100%;
+            }
+            
+            a,
+            a:visited {
+                text-decoration: none;
+                color: rgb(150,250,250);
+            }
+            
+            a:hover {
+                color: rgba(100,200,200,.8);
+            }
+            
+            header {
+                width: 100%;
+                min-height: 500px;
+                height: 100vh; 
+                background: rgb(100,100,100);
+                background-image: url('https://picsum.photos/1200/1200');
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            header .text-overlay {
+                height: 100%;
+                width: 50%;
+                width: 70ch;
+                margin: auto;
+                padding: 5em 0;                
+                display: flex;
+                flex-direction: column;
+                background: #000000;
+                color: #ffffff;
+            }
+            
+            @media only screen and (max-width: 70ch) {
+                header .text-overlay {
+                    width: 100%;
+                    padding: 0 30px;
+                }   
+            }
+            
+            header .text-overlay .text-box {
+                width: 80%;
+                width: 50ch;
+                margin: auto;
+            }
+            
+            @media only screen and (max-width: 50ch) {
+                header .text-overlay .text-box {
+                    width: 100%;
+                    padding: 30px;
+                }
+            }
+            
+            header .text-box > * {
+                margin-bottom: 20px;
+            }
+            
+            header .text-box:last-child > *{
+                margin-bottom: 0;
+            }
+            
+            .scroll-down {
+                width: 100%;
+                display: none;
+                font-size: 40px;
+            }
+            
+            /* full height header specifics inside a FQ */
+            @supports (height: 100vh) {
+                header .text-overlay {
+                    width: 100%;
+                    background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.65) );
+                }
+                
+                .scroll-down {
+                    display: block;
+                }
+            }            
+        
+            main {
+                width: 60%;
+                width: 70ch; /* override, if supported */
+                margin: 0 auto;
+                padding: 10vh 0;
+            }
+
+            @media only screen and (max-width: 70ch) {
+                main {
+                    width: 100%;
+                    padding: 0 30px;
+                }
+            }
+            
+            main p {
+                font-size: 1.5rem;
+                font-family: serif;
+                letter-spacing: .01em;
+                line-height: 2.1rem;
+                margin-bottom: 1.5rem;
+            }
+        
+            @supports (inital-letter: 4) or (-webkit-initial-letter: 4) {
+                main p:first-child::first-letter {
+                    margin-right: 0.4em;
+                    -webkit-initial-letter: 3.0;
+                    initial-letter: 3.0;
+                    color: rgb(100,100,100);
+                }         
+            }
+
+        
+        </style>
+    </head>
+    <body>
+    
+        <header>
+            <div class="text-overlay">
+                <div class="text-box">
+                    <h1>A full height hero</h1>
+                    <h2>Using <a href="https://www.youtube.com/watch?v=u00FY9vADfQ" target="_blank">Resilient CSS</a> methods!</h2>
+                </div>
+                <div class="scroll-down"><a href="#main">&#8595;</a></div>
+            </div>
+        </header>
+        
+        <main id="main">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, augue sed rutrum fringilla, eros purus malesuada sapien, condimentum lobortis metus est sed ligula. Cras sit amet nibh eu nisi cursus pretium a quis ipsum. Suspendisse placerat massa quis purus porta accumsan. Pellentesque vel fringilla lacus. Morbi tempor quis lorem a cursus. Aliquam fringilla varius felis eu sollicitudin. Nulla facilisi.</p>
+            <p>Nulla tellus sem, mattis sed turpis maximus, blandit lacinia ante. Cras interdum rhoncus tellus. Sed et est laoreet, dictum justo sit amet, fermentum justo. Nunc in metus sit amet nisl blandit mollis at eu lacus. Quisque tincidunt, dui ut condimentum consectetur, diam dolor volutpat odio, in pretium justo sem vel diam. Duis vitae euismod purus. Nam non ex quis ipsum volutpat condimentum. Ut gravida gravida odio. Pellentesque elementum nulla elementum, dapibus orci id, ultricies orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget massa sit amet dui lobortis finibus eget nec eros. Nulla semper porttitor lacus, non ornare ex interdum id. Fusce cursus neque at orci sollicitudin fermentum.</p>
+            <p>Sed tincidunt volutpat nisi. Curabitur tempor ultricies lorem, eu euismod nulla imperdiet vitae. Aliquam vitae ex nulla. Etiam id tempus quam. Vestibulum libero ipsum, congue id interdum a, aliquam in justo. Duis augue tortor, ornare et dignissim et, dictum in orci. Vivamus hendrerit, nunc ac luctus maximus, enim nisi hendrerit enim, eget porta enim enim in orci. Nullam quis mi neque. Aliquam efficitur justo magna, molestie pharetra justo tincidunt mollis. Integer venenatis tellus id nisl laoreet, non vulputate magna fermentum.</p>
+            
+        </main>
+    
+    </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Flexbox sticky footer</title>
+        
+        <style>
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                transition: .3s ease all;
+            }
+            
+            body {
+                font-size: 20px;
+                font-family: sans-serif;
+                letter-spacing: 0.03em;
+            }
+            
+            img {
+                max-width: 100%;
+            }
+            
+            header,
+            footer {
+                display: flex;
+                align-items: center;
+                background: rgb(150,150,150);
+            }
+            
+            header .brand {
+                font-size: 1em;
+                font-weight: 400;
+            }
+            nav {
+                flex: 1;
+            }
+            nav ul {
+                display: flex;
+                padding: 0;
+                list-style: none;
+                justify-content: space-around;
+            }
+            
+            nav ul li {
+                display: inline-block;
+            }
+            
+            header a,
+            footer a {
+                display: inline-block;
+                color: #ffffff;
+                text-decoration: none;
+                padding: 22px;
+            }
+            
+            header a:hover,
+            footer a:hover {
+                background: rgb(175,175,175);
+            }
+            
+            main {
+                width: 50%;
+                width: 80ch;
+                margin: 0 auto;
+                padding: 2em 0;
+            }
+            
+            @media only screen and (max-width: 80ch) {
+                main {
+                    width: 100%;
+                    padding: 0 30px;
+                }
+            }
+            
+            main > * {
+                margin-bottom: 30px;
+            }
+            
+            
+            /* STICKY FOOTER FLEXBOX */
+            
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            main {
+                flex: 2;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+    
+        <header>
+            <h1 class="brand"><a href="#">Hello World</a></h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <h1>A flexbox sticky footer</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, augue sed rutrum fringilla, eros purus malesuada sapien, condimentum lobortis metus est sed ligula. Nulla tellus sem, mattis sed turpis maximus, blandit lacinia ante.</p>
+            
+        </main>
+        
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Contact us</a></li>
+                    <li><a href="#">&copy; foreva</a></li>
+                </ul>
+            </nav>
+        </footer>
+    
+    </body>
+</html>
